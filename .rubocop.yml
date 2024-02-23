@@ -1,14 +1,13 @@
 require:
   - rubocop-rake
-  - rubocop-performance
-  - rubocop-thread_safety
 
 AllCops:
-  TargetRubyVersion: 3.2
+  TargetRubyVersion: 3.3
   DisplayCopNames: true
-  Exclude:
-    - '**/vendor/**/*'
-    - 'pkg/**/*'
+  Include:
+    - '.irbrc'
+    - 'Rakefile'
+    - 'Gemfile'
   NewCops: enable
   SuggestExtensions: false
 
@@ -20,14 +19,16 @@ Naming:
 
 Layout:
   Enabled: true
-  Include:
-    - 'lib/**/*'
 
 Migration:
   Enabled: true
 
 Security:
   Enabled: true
+
+Security/Eval:
+  Exclude:
+    - .irbrc
 
 Lint:
   Enabled: true
@@ -46,11 +47,6 @@ Rake/Desc:
 
 Gemspec:
   Enabled: true
-
-Performance:
-  Enabled: true
-  Include:
-    - 'lib/**/*'
 
 Style/Alias:
   Enabled: false
