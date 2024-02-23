@@ -22,4 +22,4 @@ jobs:
         git diff-index --quiet HEAD || git commit -m 'Update .ruby-version' .ruby-version
     secrets:
       APP_ID: ${{ secrets.APP_ID }}
-      APP_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+      APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
