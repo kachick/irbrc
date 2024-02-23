@@ -1,0 +1,24 @@
+version: 2
+updates:
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    ignore:
+      - dependency-name: 'crate-ci/typos'
+  - package-ecosystem: 'bundler'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    versioning-strategy: increase
+    ignore:
+      - dependency-name: 'rubocop'
+        versions:
+          # https://github.com/rubocop/rubocop/pull/10796
+          - '1.31.2'
+          # https://github.com/rubocop/rubocop/issues/11549
+          - '1.45.0'
+    groups:
+      rubocop-dependencies:
+        patterns:
+          - '*rubocop*'
