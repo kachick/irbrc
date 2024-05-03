@@ -29,7 +29,10 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - run: bundle install --system
+      - name: Install gems
+        run: |
+          bundle config set path.system true
+          bundle install
       - name: Setup irbrc
         run: |
           ls -alh ~/
