@@ -9,6 +9,7 @@ Extracted from https://github.com/kachick/dotfiles because of it is only one of 
 ```bash
 cd "$(mktemp --directory)"
 curl -OL https://raw.githubusercontent.com/kachick/irbrc/main/.irbrc
+mv ./.irbrc ~/
 curl -OL https://raw.githubusercontent.com/kachick/irbrc/main/Gemfile
 bundle config set path.system true
 BUNDLE_WITHOUT='development:test' bundle install
