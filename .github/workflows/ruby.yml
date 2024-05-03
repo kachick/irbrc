@@ -24,6 +24,8 @@ jobs:
   irb:
     timeout-minutes: 15
     runs-on: ubuntu-latest
+    env:
+      BUNDLE_WITHOUT: 'development:test'
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
