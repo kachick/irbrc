@@ -1,4 +1,4 @@
-name: Ruby
+name: 💎
 on:
   push:
     branches:
@@ -24,18 +24,26 @@ jobs:
   irb:
     timeout-minutes: 15
     runs-on: ubuntu-latest
+    env:
+      BUNDLE_WITHOUT: 'development:test'
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - run: bundle install --system
-      - run: |
+      - name: Install gems
+        run: |
+          bundle config set path.system true
+          bundle install
+      - name: Setup irbrc
+        run: |
           ls -alh ~/
           cp ./.irbrc ~/
-      - run: |
-          echo 'pa (2 * 3 * 7).abs == 1010102.to_s.to_i(2)' | irb --script - > test/expect.txt
-      - run: git add --intent-to-add . && git diff --exit-code test
+      - name: Run irb with my operation
+        run: |
+          echo 'pa (2 * 3 * 7).abs == 1010102.to_s.to_i(2)' | irb --script - | tee test/expect.txt
+      - name: Make sure the result as same as expected
+        run: git add --intent-to-add . && git diff --exit-code test
 
   rubocop:
     timeout-minutes: 15
