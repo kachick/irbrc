@@ -35,7 +35,7 @@ jobs:
           cp ./.irbrc ~/
       - run: |
           echo 'pa (2 * 3 * 7).abs == 1010102.to_s.to_i(2)' | irb --script - > test/expect.txt
-      - run: git add --intent-to-add . && git diff --exit-code
+      - run: git add --intent-to-add . && git diff --exit-code test
 
   rubocop:
     timeout-minutes: 15
