@@ -1,0 +1,46 @@
+name: Ruby
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - '.github/workflows/ruby.yml'
+      - '**.rb'
+      - '.ruby-version'
+      - '**.gemspec'
+      - '**Gemfile'
+      - 'Rakefile'
+  pull_request:
+    paths:
+      - '.github/workflows/ruby.yml'
+      - '**.rb'
+      - '.ruby-version'
+      - '**.gemspec'
+      - '**Gemfile'
+      - 'Rakefile'
+  workflow_dispatch:
+
+jobs:
+  irb:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - run: |
+          ls -alh ~/
+          cp ./.irbrc ~/
+      - run: |
+          echo 'pa (2 * 3 * 7).abs == 1010102.to_s.to_i(2)' | irb --script -
+
+  rubocop:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - run: bundle exec rake rubocop
