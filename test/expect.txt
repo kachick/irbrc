@@ -1,0 +1,12 @@
+Switch to inspect mode.
+pa (2 * 3 * 7).abs == 1010102.to_s.to_i(2)
+(2 * 3 * 7).abs == 1010102.to_s.to_i(2)
+            |   |          |    |
+            |   |          |    42
+            |   |          "1010102"
+            |   true
+            42
+
+=> true
+nil
+
