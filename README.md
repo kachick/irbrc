@@ -15,6 +15,16 @@ bundle config set path.system true
 BUNDLE_WITHOUT='development:test' bundle install
 ```
 
+It may require some core dependencies like gcc.\
+For example building io-console native gem errors, you should try.
+
+```bash
+# Download as above
+# And inject gcc for the PATH with impure mode
+nix-shell --packages gcc
+BUNDLE_WITHOUT='development:test' bundle install
+```
+
 Then you can use irb as follows
 
 ```console
