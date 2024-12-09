@@ -31,5 +31,5 @@ desc 'Tests except ruby'
 task :check_non_ruby do
   sh('typos . .github .vscode')
   sh('dprint check')
-  sh('nixpkgs-fmt --check ./*.nix')
+  sh('nixfmt --check ./*.nix')
 end
