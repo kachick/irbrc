@@ -30,7 +30,7 @@
                 nixfmt-rfc-style
                 nil
 
-                ruby_3_3
+                ruby_3_4
                 # Required to build psych via irb dependency
                 # https://github.com/kachick/irb-power_assert/issues/116
                 # https://github.com/ruby/irb/pull/648
