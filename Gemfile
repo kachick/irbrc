@@ -10,6 +10,6 @@ group(:development, :test) do
 end
 
 group(:development) do
-  gem('rubocop', '~> 1.75.4', require: false)
+  gem('rubocop', '~> 1.75.8', require: false)
   gem('rubocop-rake', '~> 0.7.1', require: false)
 end
