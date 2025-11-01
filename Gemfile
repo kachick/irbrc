@@ -6,7 +6,7 @@ source('https://rubygems.org')
 gem('irb-power_assert', '~> 0.4.0')
 
 group(:development, :test) do
-  gem('rake', '~> 13.3.0')
+  gem('rake', '~> 13.3.1')
 end
 
 group(:development) do
