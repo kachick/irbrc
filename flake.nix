@@ -29,7 +29,7 @@
                 findutils # xargs
                 nixfmt
                 nixfmt-tree
-                nil
+                nixd
 
                 ruby_3_4
                 # Required to build psych via irb dependency
