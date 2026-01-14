@@ -28,7 +28,7 @@ BUNDLE_WITHOUT='development:test' bundle install
 Then you can use irb as follows
 
 ```console
-/tmp/tmp.hutvKLSLVC via 💎 v3.3.0 22s zsh
+/tmp/tmp.hutvKLSLVC via 💎 v4.0.0 22s zsh
 > irb
 irb(main):001> pa (2 * 3 * 7).abs == 1010102.to_s.to_i(2)
 (2 * 3 * 7).abs == 1010102.to_s.to_i(2)
