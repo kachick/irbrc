@@ -23,7 +23,7 @@ on:
 jobs:
   irb:
     timeout-minutes: 15
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     env:
       BUNDLE_WITHOUT: 'development:test'
     steps:
@@ -50,7 +50,7 @@ jobs:
 
   rubocop:
     timeout-minutes: 15
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@v7
       - uses: ruby/setup-ruby@8e41b362d2589a22a44c1cfa214b3c83052c195b # v1.318.0
