@@ -2,6 +2,10 @@
 
 [![Ruby CI](https://github.com/kachick/irbrc/actions/workflows/ruby.yml/badge.svg?branch=main)](https://github.com/kachick/irbrc/actions/workflows/ruby.yml?query=branch%3Amain+)
 
+- _**This repository is archived**_
+- _**No longer maintained**_
+- Archived to reduce the maintenance cost of keeping the entire environment secure, such as GitHub Actions.
+
 Extracted from https://github.com/kachick/dotfiles because of it is only one of depending ruby environment
 
 ## Installation
